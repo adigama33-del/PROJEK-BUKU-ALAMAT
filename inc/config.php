@@ -7,6 +7,6 @@ spl_autoload_register(function ($class_name) {
 const DB_HOST = 'localhost';
 const DB_USER = 'root';       // sesuaikan dengan user MySQL Anda
 const DB_PASS = 'Nanimo33.';   // sesuaikan dengan password MySQL Anda
-const DB_NAME = 'warung_madura';   // sesuaikan dengan nama database yang sudah dibuat
+const DB_NAME = 'buku_alamat';   // sesuaikan dengan nama database yang sudah dibuat
 // Define base URL
 const BASE_URL = 'http://localhost:8000/'; // sesuaikan dengan nama folder
