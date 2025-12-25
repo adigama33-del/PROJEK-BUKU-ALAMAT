@@ -1,3 +1,9 @@
+<?php
+require_once 'inc/config.php';
+
+$contactObj = new Contacts();
+$contacts = $contactObj->getAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +25,31 @@
             <input type="text" name="search" placeholder="Cari kontak...">
             <button type="submit">Cari</button>
         </form>
+        <div class="contact-grid">
+            <?php foreach ($contacts as $c): ?>
+            <div class="card">
+                <div class="info">
+                    <h3><?= htmlspecialchars($c['name']) ?></h3>
+                    
+                    <div class="detail-row">
+                        <span><?= htmlspecialchars($c['phone']) ?></span>
+                    </div>
+                    
+                    <?php if(!empty($c['email'])): ?>
+                    <div class="detail-row">
+                        <span><?= htmlspecialchars($c['email']) ?></span>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if(!empty($c['address'])): ?>
+                    <div class="detail-row">
+                        <span><?= htmlspecialchars($c['address']) ?></span>
+                    </div>
+                    <?php endif; ?>
+                </div>   
+            </div>
+            <?php endforeach; ?>
+        </div>
     </section>
 </body>
 </html>

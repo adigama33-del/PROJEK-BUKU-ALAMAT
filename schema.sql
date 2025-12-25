@@ -10,3 +10,8 @@ CREATE TABLE contacts (
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+use buku_alamat;
+INSERT INTO contacts (name, phone, email, address) VALUES
+('Alice Johnson', '123-456-7890', 'alice@example.com', '123 Main St, City, Country');
+	
