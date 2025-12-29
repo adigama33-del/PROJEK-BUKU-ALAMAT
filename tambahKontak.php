@@ -17,7 +17,7 @@
 
     <section>
         <div class="form-container">
-            <form action="saveContact.php" method="POST">
+            <form action="saveKontak.php" method="POST">
                 
                 <div class="form-group">
                     <label>Nama Lengkap *</label>
