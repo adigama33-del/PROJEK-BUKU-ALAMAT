@@ -20,4 +20,9 @@ class Contacts {
         $sql = "INSERT INTO contacts (name, phone, email, address) VALUES (:name, :phone, :email, :address)";
         return $this->db->query($sql, $data); 
     }
+    
+    public function delete($id) {
+        $sql = "DELETE FROM contacts WHERE id = :id";
+        return $this->db->query($sql, ['id' => $id]);
+    }
 }
