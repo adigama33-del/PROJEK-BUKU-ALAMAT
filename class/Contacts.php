@@ -25,4 +25,18 @@ class Contacts {
         $sql = "DELETE FROM contacts WHERE id = :id";
         return $this->db->query($sql, ['id' => $id]);
     }
+    
+    public function search($keyword) {
+        // Mencari keyword di kolom nama, telepon, email, atau alamat
+        $sql = "SELECT * FROM contacts 
+                WHERE name LIKE :keyword 
+                OR phone LIKE :keyword 
+                OR email LIKE :keyword
+                 
+                ORDER BY name ASC";
+        
+        $params = ['keyword' => "%$keyword%"];
+        
+        return $this->db->query($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

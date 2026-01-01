@@ -2,7 +2,14 @@
 require_once 'inc/config.php';
 
 $contactObj = new Contacts();
-$contacts = $contactObj->getAll();
+
+$keyword = $_GET['search'] ?? '';
+
+if (!empty($keyword)) {
+    $contacts = $contactObj->search($keyword);
+} else {
+    $contacts = $contactObj->getAll();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +29,15 @@ $contacts = $contactObj->getAll();
         <button><a href="tambahKontak.php">Tambah Kontak</a></button>
     </header>
     <section>
-        <form action="" method="post" class="search-bar">
-            <input type="text" name="search" placeholder="Cari kontak...">
+        <form action="" method="GET" class="search-bar">
+            <input type="text" name="search" placeholder="Cari kontak..." value="<?= htmlspecialchars($keyword) ?>">
             <button type="submit">Cari</button>
         </form>
+        <?php if (empty($contacts)): ?>
+            <p style="text-align:center; color:gray; margin-top:20px;">
+                Tidak ditemukan kontak dengan kata kunci "<b><?= htmlspecialchars($keyword) ?></b>".
+            </p>
+        <?php endif; ?>
         <div class="contact-grid">
             <?php foreach ($contacts as $c): ?>
             <div class="card">
