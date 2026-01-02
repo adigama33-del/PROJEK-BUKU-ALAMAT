@@ -177,29 +177,30 @@ section {
 }
 
 .card-actions {
+    padding-top: 20px;
     display: flex;
-    gap: 10px;
-    height: 100%;
-    padding-top: 24px;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 15px;           
+    align-items: center;
 }
 
 .btn-icon {
     text-decoration: none;
     color: hsl(0, 0%, 60%);
     font-size: 18px;
-    transition: color 0.2s;
+    transition: all 0.2s;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 5px;
 }
 
 .btn-icon.delete:hover {
     color: hsl(0, 80%, 60%);
+    transform: scale(1.1);
 }
 
-
-.info {
-    flex-grow: 1;
+.btn-icon.edit:hover {
+    color: hsl(210, 100%, 50%); 
+    transform: scale(1.1);
 }

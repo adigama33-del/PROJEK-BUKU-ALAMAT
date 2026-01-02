@@ -65,6 +65,11 @@ if (!empty($keyword)) {
                 </div> 
 
                 <div class="card-actions">
+                    <a href="editKontak.php?id=<?= $c['id'] ?>" 
+                    class="btn-icon edit" 
+                    title="Edit">
+                        <i class="fas fa-pen"></i>
+                    </a>
                     <a href="deleteKontak.php?id=<?= $c['id'] ?>" 
                        class="btn-icon delete" 
                        onclick="return confirm('Yakin ingin menghapus kontak ini?')"
