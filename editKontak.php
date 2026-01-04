@@ -26,7 +26,6 @@ if (!$data) {
             <h1>Edit Kontak</h1>
             <p>Perbarui informasi kontak</p>
         </div>
-        <button><a href="index.php">Kembali</a></button>
     </header>
 
     <section>

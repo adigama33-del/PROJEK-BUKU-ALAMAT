@@ -26,7 +26,9 @@ if (!empty($keyword)) {
             <h1>Buku Alamat</h1>
             <p>Kelola Kontak pribadi Anda</p>
         </div>
-        <button><a href="tambahKontak.php">Tambah Kontak</a></button>
+        <a href="tambahKontak.php" class="btn-add" title="Tambah Kontak Baru">
+            Tambah Kontak
+        </a>
     </header>
     <section>
         <form action="" method="GET" class="search-bar">
